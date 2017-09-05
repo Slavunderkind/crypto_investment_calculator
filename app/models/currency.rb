@@ -1,8 +1,6 @@
 class Currency
-
-
   def initialize
-    "sksks"
+    "example"
   end
 
   def all
