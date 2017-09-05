@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'currency/new'
+
   get 'pages/index'
   root "pages#index"
 
