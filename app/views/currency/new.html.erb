@@ -1,0 +1,7 @@
+<%= form_for :currencies do |f| %>
+    <%= select_tag "day", options_for_select(['example', 'aall']) %>
+
+    <%= f.label("Enter amount:") %>
+    <%= text_field_tag(:amount) %>
+    <%= f.submit "Convert" %>
+<% end %>
