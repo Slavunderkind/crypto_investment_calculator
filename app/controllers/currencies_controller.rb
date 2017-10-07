@@ -1,8 +1,9 @@
-# require 'rest-client'
+require 'net/http'
 
 class CurrenciesController < ApplicationController
   def new
-    # @all = RestClient.get(COINMARKETCAP_ENDPOINT).first
+    uri = URI(COINMARKETCAP_ENDPOINT)
+    @all = Net::HTTP.get_response(uri).body # => String
   end
 
   def index
