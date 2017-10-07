@@ -1,6 +1,12 @@
 <%= form_for :currency, url: currencies_path do |c| %>
-    <%= c.select :name, ['example', 'all'] %>
+    <%= c.label :crypto_name, 'Convert crypto' %>
+    <%= c.select :name, ['BTC', 'ETH'] %>
 
+    <%= c.label :amount, 'Amount' %>
     <%= c.text_field :amount, placeholder: 'Amount', required: 'required' %>
-    <%= c.submit "Convert" %>
+
+    <%= c.label :fiat_name, 'Convert in' %>
+    <%= c.select :fiat_name, ['USD', 'EUR'] %>
+
+    <%= c.submit 'Convert' %>
 <% end %>
