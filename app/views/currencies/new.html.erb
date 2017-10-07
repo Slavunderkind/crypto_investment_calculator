@@ -1,0 +1,6 @@
+<%= form_for :currency, url: currencies_path do |c| %>
+    <%= c.select :name, ['example', 'all'] %>
+
+    <%= c.text_field :amount, placeholder: 'Amount', required: 'required' %>
+    <%= c.submit "Convert" %>
+<% end %>
