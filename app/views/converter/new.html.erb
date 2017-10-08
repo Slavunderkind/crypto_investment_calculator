@@ -1,4 +1,4 @@
-<%= form_for :currency, url: currencies_path do |c| %>
+<%= form_for :converter, url: converter_index_path do |c| %>
     <%= c.label :crypto_name, 'Convert crypto' %>
     <%= c.select :name, @crypto_names %>
 
