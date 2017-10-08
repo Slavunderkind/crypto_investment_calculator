@@ -3,7 +3,4 @@ class Currency
     "example"
   end
 
-  def all
-    ['ETH', 'BTC', 'NEM']
-  end
 end
