@@ -1,3 +1,4 @@
+# Converter class
 class Converter
   attr_accessor :from, :to, :amount, :price
 
