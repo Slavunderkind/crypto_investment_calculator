@@ -8,4 +8,10 @@ class Converter
     @amount = args.fetch(:amount)
     @price = args[:price]
   end
+
+  def execute
+    uri = URI(COINMARKETCAP_ENDPOINT + from + '/?convert=EUR')
+    res = Net::HTTP.get_response(uri)
+    @cryptos = JSON.parse(res.body)
+  end
 end

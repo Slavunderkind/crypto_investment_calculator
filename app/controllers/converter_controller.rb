@@ -20,7 +20,7 @@ class ConverterController < ApplicationController
     end
   end
 
-  def currency_params
-    params.require(:currency).permit!
+  def converter_params
+    params.require(:converter).permit!
   end
 end
