@@ -1,6 +1,6 @@
 require 'net/http'
 
-class CurrenciesController < ApplicationController
+class ConverterController < ApplicationController
   def new
     uri = URI(COINMARKETCAP_ENDPOINT)
     res = Net::HTTP.get_response(uri)
@@ -20,7 +20,7 @@ class CurrenciesController < ApplicationController
     end
   end
 
-  def currency_params
-    params.require(:currency).permit!
+  def converter_params
+    params.require(:converter).permit!
   end
 end
