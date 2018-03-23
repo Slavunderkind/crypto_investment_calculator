@@ -1,4 +1,5 @@
 # Converter class
+require 'byebug'
 class Converter
   attr_accessor :from, :to, :amount, :price
 
@@ -12,6 +13,6 @@ class Converter
   def execute
     uri = URI(COINMARKETCAP_ENDPOINT + from + '/?convert=EUR')
     res = Net::HTTP.get_response(uri)
-    @cryptos = JSON.parse(res.body)
+    JSON.parse(res.body).first
   end
 end

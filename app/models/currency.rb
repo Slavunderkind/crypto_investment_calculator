@@ -1,6 +1,3 @@
 class Currency
-  def initialize
-    "example"
-  end
-
+  attr_accessor :name, :short_name, :price_usd, :price_eur
 end
