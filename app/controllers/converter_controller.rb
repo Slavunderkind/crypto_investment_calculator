@@ -14,6 +14,7 @@ class ConverterController < ApplicationController
   def create
     currency = UseCases::Currency.new(name: converter_params["from"])
     @price = currency.price
+    render text: @price
   end
 
   private
