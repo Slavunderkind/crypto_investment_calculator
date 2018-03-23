@@ -1,4 +1,5 @@
 require 'net/http'
+require_dependency './app/use_cases/currency'
 
 class ConverterController < ApplicationController
   def new
@@ -11,8 +12,8 @@ class ConverterController < ApplicationController
   def index; end
 
   def create
-    currency = Currency.new(name: converter_params["from"])
-    price = currency.price
+    currency = UseCases::Currency.new(name: converter_params["from"])
+    @price = currency.price
   end
 
   private
