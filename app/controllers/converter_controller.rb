@@ -1,5 +1,4 @@
 require 'net/http'
-require 'byebug'
 
 class ConverterController < ApplicationController
   def new
@@ -12,9 +11,8 @@ class ConverterController < ApplicationController
   def index; end
 
   def create
-    converter ||= Converter.new(converter_params)
-    price = converter.execute["price_#{converter.to.downcase}"]
-    byebug
+    currency = Currency.new(name: converter_params["from"])
+    price = currency.price
   end
 
   private
